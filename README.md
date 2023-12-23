@@ -224,14 +224,6 @@ methodological advances obtained using these data will be directly applicable wo
 different realities and will certainly make a difference in our understanding and fight against gender-
 based violence in all its forms.
 
-Methodology
-------
-Prova
-
-Results
-------
-The main preliminary results of the project can be consulted [here](https://www.google.cat).
-
 Acknowledgements
 ------
 This research has been funded by the Social Observatory of the "la Caixa" Foundation as part of
