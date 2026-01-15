@@ -38,15 +38,10 @@ I <- c(rep(0, 541), rep(1, 14), rep(0, 81))
 # JAGS to estimate parameters
 jags_GBV <- function() {
   for (i in 1:N) {
-    lambda0[i] <- ifelse(i < cp, lambda1, lambda2)
     thin[i] <- q0*step(cp-i)+(q0+(i-cp)/(1/(1-q0)*(alpha-cp)))*step(i-cp) #linear
-    z[i] ~ dpois(lambda0[i])
-    x[i] ~ dpois(lambda + Ind[i]*beta)
-    y[i] ~ dpois(thin[i]*x[i])
+    y[i] ~ dpois(thin[i]*(lambda + Ind[i]*beta))
   }  
   # priors
-  lambda1 ~ dgamma(1, 1)
-  lambda2 ~ dgamma(3, 3)
   q0 ~ dbeta(1, 1)
   lambda ~ dnorm(lambda_mean, 100)
   beta ~ dgamma(2, 1)
